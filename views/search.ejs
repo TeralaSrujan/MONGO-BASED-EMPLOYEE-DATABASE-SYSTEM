@@ -1,0 +1,68 @@
+<%- include('partials/header') -%>
+<style>
+    body{
+ background-image: url("https://static.wixstatic.com/media/ee5f36_33dc59b4441c4aa9b2735860043164b6~mv2.png/v1/fill/w_2274,h_1172,fp_0.50_0.50/ee5f36_33dc59b4441c4aa9b2735860043164b6~mv2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+</style>
+
+    <div class="container mt-5 w-50">
+
+
+        <form action="/employee3" method="GET">
+            <input type="text" name="name" class="form-control" placeholder="Employee Name">
+
+            <button type="submit" class="btn btn-danger btn-block mt-3">Search in Database</button>
+
+        </form>
+
+        <% if(employee3) { %>
+            <p></p>
+            <h7 class="text-danger my-4">Search Results: </h7>
+            <p></p>
+            <table class="table table-bordered" width="100%"  cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>age</th>
+                        <th>gender</th>
+                        <th>Designation</th>
+                        <th>Salary</th>
+                        <th>contact</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= employee3.name %>
+                        </td>
+                        <td>
+                            <%= employee3.age %>
+                        </td>
+                        <td>
+                            <%= employee3.gender %>
+                        </td>
+                        <td>
+                            <%= employee3.designation %>
+                        </td>
+                        <td>₹<%= employee3.salary %>
+                            
+                        </td>
+                        <td>
+                            <%= employee3.contact %>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <% } else if(employee3 !='' ){ %>
+
+                <div class="alert alert-danger mt-4">Employee does not exist with this name.</div>
+
+                <% } %>
+
+    </div>
+
+    <%- include('partials/footer') -%>

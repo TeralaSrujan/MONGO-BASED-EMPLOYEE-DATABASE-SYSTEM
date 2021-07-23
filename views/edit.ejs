@@ -1,0 +1,52 @@
+<%- include('partials/header') -%>
+<style>
+    body{
+ background-image: url("https://static.wixstatic.com/media/ee5f36_b694f6a93588436b83d2db70a28f5c6b~mv2.png/v1/fill/w_2256,h_1125,fp_0.50_0.50/ee5f36_b694f6a93588436b83d2db70a28f5c6b~mv2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .cont{
+        padding-left: 40px;
+    }
+</style>
+<body>
+
+    <div class="container mt-5 w-50">
+
+        <h2 class="mb-4" style="padding-left: 80px;">UPDATE EMPLOYEE DATA</h2>
+        <div class="col-md-10">
+
+        <form action="/edit/<%= employee3.id %>?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT" >
+
+           <div class="cont">
+
+            <input type="text" value="<%= employee3.name %>" name="name" class="form-control"
+                placeholder="Employee Name">
+
+                <input type="text" value="<%= employee3.age %>" name="age" class="form-control"
+                placeholder="Employee age">
+
+                <input type="text" value="<%= employee3.gender %>" name="gender" class="form-control"
+                placeholder="Employee gender">
+
+                <input type="text" value="<%= employee3.designation %>" name="designation" class="form-control"
+                placeholder="Employee Designation">
+
+                <input type="text" value="<%= employee3.salary %>" name="salary" class="form-control"
+                placeholder="Employee Salary">
+
+                <input type="text" value="<%= employee3.contact %>" name="contact" class="form-control"
+                placeholder="Employee contact">
+            </div></div>
+            <div class="col-md-7" style="padding-left: 150px;">
+
+            <button type="submit" class="btn btn-danger btn-block mt-3">Update Employee</button>
+        </div>
+    </div>
+        </form>
+    
+    </div>
+    </body>
+
+    <%- include('partials/footer') -%>

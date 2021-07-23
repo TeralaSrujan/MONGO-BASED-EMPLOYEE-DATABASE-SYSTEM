@@ -1,0 +1,42 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5">
+    <%- include('partials/messages') -%>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Designation</th>
+                <th>Salary</th>
+                <th>Contact</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% employees.forEach((employee3)=> { %>
+                    <tr>
+                        <td> <%= employee3.name %></td>
+                        <td><%= employee3.age %></td>
+                        <td><%= employee3.gender %></td>
+                        <td><%= employee3.designation %></td>
+                        <td>₹<%= employee3.salary %></td>
+                        <td><%= employee3.contact %></td>
+                        <td>
+                            <a class="btn btn-primary" href="/edit/<%= employee3.id %>">Edit</a>
+                            <form style="display: inline;" action="/delete/<%= employee3.id %>?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    
+               <% }) %>
+                
+
+            </tbody>
+        </table>
+    </div>
+<%- include('partials/footer') -%>
+

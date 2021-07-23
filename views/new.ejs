@@ -1,0 +1,31 @@
+<%- include('partials/header') -%>
+
+<style>
+    body{
+ background-image: url("https://static.wixstatic.com/media/ee5f36_9393e8a269194b6fb8c5a963e5cdbf1d~mv2.png/v1/fill/w_2274,h_1172,fp_0.50_0.50/ee5f36_9393e8a269194b6fb8c5a963e5cdbf1d~mv2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+</style>
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4" style="padding-left: 200px;padding-top: 70px; padding-bottom: 20px; "> NEW EMPLOYEE REGISTRATION</h2>
+<div class="col-md-13" style="padding-left: 200px;">
+    <form action="/employee3/new" method="POST">
+        <input type="text" name="name" class="form-control" placeholder="Employee Name">
+
+        <input type="text" name="age" class="form-control" placeholder="Employee age">
+
+        <input type="text" name="gender" class="form-control" placeholder="Employee gender">
+
+        <input type="text" name="designation" class="form-control" placeholder="Employee Designation">
+
+        <input type="text" name="salary" class="form-control" placeholder="Employee Salary">
+       
+        <input type="text" name="contact" class="form-control" placeholder="Employee contact">
+
+        <button type="submit" class="btn btn-danger btn-block mt-3">Register</button>
+    </div>
+    </form>
+</div>
+<%- include('partials/footer') -%>
